@@ -20,11 +20,12 @@
 #define MD5_CBLOCK  64
 #define MD5_LBLOCK  (MD5_CBLOCK/4)
 #define MD5_DIGEST_LENGTH 16
+/* - fix for 1.26 removes include <openssl/sha.h> in ngx_sha1.h */
+#ifndef SHA_CBLOCK
 #define SHA_CBLOCK 64
-#define SHA_DIGEST_LENGTH 20
+#endif
 
 #ifndef SHA_DIGEST_LENGTH
-#define SHA_CBLOCK 64
 #define SHA_DIGEST_LENGTH 20
 #endif
 
